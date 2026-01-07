@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>广东美食文化网</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .scroll-reveal {opacity:0;transform:translateY(25px);transition:opacity 0.9s,transform 0.9s}
+        .scroll-reveal.show {opacity:1;transform:translateY(0)}
+        .food-card {transition:all 0.3s}
+        .food-card:hover {transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+        .food-card h3::after {content:"🍽️";margin-left:6px;opacity:0;transition:opacity 0.3s}
+        .food-card:hover h3::after {opacity:1}
+                /* 1. 公告容器：负责显示单个公告，隐藏超出内容 */
+                .notice-up-container {
+            width: 100%; 
+            height: 40px; 
+            line-height: 40px;
+            background: #fff3cd; 
+            border: 1px solid #ffeeba;
+            color: #856404;
+            overflow: hidden; 
+            position: relative; 
+            margin: 20px 0;
+        }
+        .notice-up-content {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            animation: scrollUp 7s linear infinite;
+        }
+        .notice-up-content p {
+            margin: 0;
+            padding: 0 10px;
+        }
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body class="index-page">
+    <div class="notice-up-container">
+        <div class="notice-up-content">
+            <p>【公告1】粤式茶点专区全新上线，经典风味等你探索！</p >
+            <p>【公告2】网站加载速度优化完成，浏览体验更流畅~</p >
+            <p>【公告3】「寻味粤北岭南」美食分享活动邀您参与！</p >
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <a href=" ">
+            <img src="./images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+            </a >
+            <h1>广东美食文化网</h1>
+        </div>
+        <div class="nav">
+            <ul class="scroll-reveal">
+                <li><a href="./index.html" class="active">🏠 首页</a ></li>
+                <li><a href="./yuecai/index.html">🍲 粤菜经典</a ></li>
+                <li><a href="./chaoshan/index.html">🦞 潮汕风味</a ></li>
+                <li><a href="./kejia/index.html">🍛 客家菜韵</a ></li>
+                <li><a href="./soup/index.html">🥣 粤式靓汤</a ></li>
+                <li><a href="./dimsum/index.html">🍵 粤式茶点</a ></li>
+                <li><a href="./dessert/index.html">🍧 岭南甜品</a ></li>
+                <li><a href="./link/contact.html">📞 联系我们</a ></li>
+                <li><a href="javascript:logout()" style="color:#c8102e">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="img-box scroll-reveal">
+                    <img src="./images/guangdong_food.jpg" alt="广东美食合集">
+                </div>
+                <h2>岭南美食文化</h2>
+                <p>广东美食以粤菜为核心，兼具潮汕风味、客家菜韵，讲究清鲜爽滑、时令养生，是中国饮食文化的重要瑰宝。</p >
+            </div>
+            <div class="sidebar">
+                <h3>栏目快速入口</h3>
+                <ul class="scroll-reveal">
+                    <li><a href="./yuecai/index.html">粤菜经典</a ></li>
+                    <li><a href="./chaoshan/index.html">潮汕风味</a ></li>
+                    <li><a href="./kejia/index.html">客家菜韵</a ></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            if(window.location.href.includes('login.html')) return;
+            if(localStorage.getItem('isLogin') !== 'yes') {
+                alert('请先登录才能访问！');
+                window.location.href = './link/login.html';
+            }
+        }
+        function logout() {
+             if (localStorage.getItem('isLogin') === 'yes') {
+             localStorage.removeItem('isLogin');
+            localStorage.removeItem('user');
+              alert('已退出登录');
+       }
+    window.location.href = './link/login.html';
+}
+        function checkReveal() {
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight*0.8) el.classList.add('show');
+            });
+        }
+        window.addEventListener('load', checkReveal);
+        window.addEventListener('scroll', checkReveal);
+    </script>
+</body>
+</html>

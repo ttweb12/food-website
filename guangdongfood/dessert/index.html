@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>岭南甜品 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dessert-page">
+    <div class="container">
+        <div class="header">
+            <a href="../index.html">
+        <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+    </a >
+            <h1>广东美食文化网 - 岭南甜品</h1>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a></li>
+                <li><a href="../chaoshan/index.html">🦞 潮汕风味</a></li>
+                <li><a href="../kejia/index.html">🍛 客家菜韵</a></li>
+                <li><a href="../soup/index.html">🥣 粤式靓汤</a></li>
+                <li><a href="../dimsum/index.html">🍵 粤式茶点</a></li>
+                <li><a href="index.html">🍧 岭南甜品</a></li>
+                <li><a href="../link/contact.html">📞 联系我们</a></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <h2>岭南甜品介绍</h2>
+                <p>岭南甜品是广东饮食文化的甜蜜瑰宝，以“清甜爽口、选材天然、滋养润燥”为特色。它融合了广府、潮汕、客家的饮食智慧，多用牛奶、椰汁、豆类、水果、草本植物为原料，做法讲究火候与配比，既能作为餐后甜点，也能当作清热解暑的日常小吃。</p >
+                <div class="img-box">
+                    <img src="../images/dessert_collection.jpg" alt="岭南甜品合集">
+                </div>
+
+                <p>点击下方链接，解锁岭南甜品的甜蜜滋味，学习经典甜品的家常制作教程：</p >
+                <ul style="margin: 10px 0 20px 20px; line-height: 1.8;">
+                    <li><a href="classic.html">👉 经典甜品推荐</a >：双皮奶、姜撞奶、钵仔糕等招牌甜品</li>
+                    <li><a href="tutorial.html">👉 甜品制作教程</a >：在家就能做的简单岭南甜品配方</li>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <h3>🍧 甜品栏目导航</h3>
+                <ul>
+                    <li><a href="index.html">甜品首页</a ></li>
+                    <li><a href="classic.html">经典甜品</a ></li>
+                    <li><a href="tutorial.html">制作教程</a ></li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">📖 美食小知识</h3>
+                <p style="line-height: 1.8; color: #666;">岭南甜品讲究“时令养生”，夏季多吃绿豆沙、凉粉清热解暑，冬季多吃姜撞奶、芝麻糊暖身驱寒，顺应季节变化滋养身体。</p >
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+     <script>
+    window.onload = function() {
+        if(window.location.href.includes('login.html')) return;
+        if(localStorage.getItem('isLogin') !== 'yes') {
+            alert('请先登录才能访问！');
+            window.location.href = '../link/login.html';
+        }
+    }
+    function logout() {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        alert('已退出登录');
+        window.location.href = '../link/login.html';
+    }
+</script>
+</body>
+</html>
