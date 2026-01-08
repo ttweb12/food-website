@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", "宋体", Arial, sans-serif;
+}
+:root {
+    --primary: #FF8C00;
+    --secondary: #8B4513; 
+    --light: #FFF8E7; 
+    --text: #333333; 
+    --light-text: #666666;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    font-family: "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+.header {
+    padding: 20px 0;
+    border-bottom: 2px solid #c8102e;
+    margin-bottom: 20px;
+}
+
+.header-logo {
+    width: 80px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.header-logo-center {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.header h1 {
+    color: #c8102e;
+    font-size: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nav {
+    background-color: #f0a868;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover {
+    background-color: #c8102e;
+    border-radius: 6px;
+}
+.img-box {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;    
+    transition: transform 0.3s;
+}
+
+.img-box img:hover {
+    transform: scale(1.05);
+}
+.food-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #faf6f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #f0a868;
+ } 
+
+.card-img {
+    width: 200px;
+    height: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-text h3 {
+    color: #c8102e;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card-text p {
+    color: #666;
+    line-height: 1.6;
+}
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color: #faf6f0;
+    border-radius: 8px;
+    float: right;
+    margin-left: 20px;
+}
+
+.sidebar h3 {
+    color: #c8102e;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #c8102e;
+}
+.content {
+    width: 65%;
+    float: left;
+}
+
+.content h2 {
+    color: #c8102e;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.footer {
+    clear: both;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #c8102e;
+    margin-top: 30px;
+    color: #666;
+}
+.food-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.food-card .card-text h3 {
+  position: relative;
+  display: inline-block;
+}
+.food-card .card-text h3::after {
+  content: "🍽️"; /* hover显示的小图标，可换成🥣/🍧等对应品类图标 */
+  margin-left: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.food-card:hover .card-text h3::after {
+  opacity: 1;
+}
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.notice-up-container {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+.notice-up-content {
+  animation: scrollUp 8s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.notice-up-content p {
+  margin: 0;
+  padding: 0 16px;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+.nav a.active {
+  background-color: #c8102e;
+  border-radius: 6px;
+  color: #fff;
+}
+.food-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+.food-card .card-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0,0,0,0.2));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.food-card:hover .card-img::after {
+  opacity: 1;
+}
+.btn, .submit-btn, .nav a, button {
+  transition: all 0.3s ease;
+}
+.nav a:hover {
+  transform: scale(1.05);
+}
+.btn:hover, .submit-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(200, 16, 46, 0.2);
+}
+img {
+  border-radius: 8px !important;
+  transition: transform 0.5s ease;
+}
+.img-box:hover img {
+  transform: scale(1.02);
+}
+.gradient-title {
+  background: linear-gradient(90deg, #c8102e, #e63946);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+.index-page h1 {
+  font-size: 28px !important;
+  text-align: center;
+  background: linear-gradient(90deg, #c8102e, #e63946, #c8102e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 20px 0 !important;
+  letter-spacing: 2px;
+}
+
+/* 2. 首页banner图加阴影+hover放大，更有质感 */
+.index-page .img-box {
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.index-page .img-box img {
+  transition: transform 0.8s ease;
+}
+.index-page .img-box:hover img {
+  transform: scale(1.03);
+}
+
+/* 3. 栏目快速入口（侧边栏）美化，加图标+hover动效 */
+.index-page .sidebar h3 {
+  color: #c8102e !important;
+  border-bottom: 2px solid #f8d7da;
+  padding-bottom: 8px;
+  margin-bottom: 15px !important;
+}
+.index-page .sidebar li {
+  list-style: none;
+  margin: 12px 0;
+  transition: all 0.3s;
+}
+.index-page .sidebar li:hover {
+  transform: translateX(5px);
+}
+.index-page .sidebar a:hover {
+  color: #c8102e !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 4. 滚动公告栏优化，加图标+文字居中 */
+.index-page .notice-up-container {
+  background: linear-gradient(120deg, #fff3cd, #fff8e1);
+  border-color: #ffeeba;
+  font-size: 15px;
+}
+.index-page .notice-up-content p::before {
+  content: "📢";
+  margin-right: 10px;
+}
+/* 复制到CSS里 */
+.header-logo {
+  transition: transform 0.5s ease;
+}
+.header-logo:hover {
+  transform: rotate(360deg);
+}
+/* 美食图片 hover 变亮放大 */
+.img-box img {
+  transition: all 0.3s ease;
+  filter: brightness(0.9); /* 初始暗一点 */
+}
+.img-box:hover img {
+  transform: scale(1.05); /* 轻微放大 */
+  filter: brightness(1.1); /* 变亮 */
+  box-shadow: 0 0 15px rgba(200,16,46,0.2); /* 加层红光阴影 */
+}
+@media (max-width: 768px) {
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
+    .nav li {
+        flex: 1 1 30%;
+        text-align: center;
+        margin: 5px 0;
+        list-style: none;
+    }
+    .nav a {
+        font-size: 14px;
+        padding: 6px 3px;
+        display: block;
+        text-decoration: none;
+    }
+    .nav a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+    .img-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .img-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    .food-card {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 6px;
+    }
+    .card-img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        width: 100%;
+        padding: 0;
+    }
+    h1 {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+    h2 {
+        font-size: 18px;
+        margin: 10px 0;
+        padding-left: 8px;
+    }
+    h3 {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    .feedback-form {
+        padding: 15px;
+        margin-top: 15px;
+    }
+    .form-group input, .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .content, .sidebar {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .sidebar {
+        margin-top: 20px;
+        padding: 10px;
+        background: #f9f6ed;
+        border-radius: 6px;
+    }
+    .footer p {
+        font-size: 12px;
+        line-height: 1.6;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .login-wrap {
+        width: 100%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .nav li {
+        flex: 1 1 20%; /* 一行显示5个导航项 */
+    }
+    .food-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card-img {
+        width: 40%;
+    }
+    .card-text {
+        width: 60%;
+        padding-left: 15px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+ul {
+    list-style-position: inside;
+}
+a {
+    color: #0066cc;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #c8102e;
+}
