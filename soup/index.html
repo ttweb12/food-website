@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>粤式靓汤 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="soup-page">
+    <div class="container">
+        <div class="header">
+            <a href="../index.html">
+        <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+    </a >
+            <h1>广东美食文化网 - 粤式靓汤</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a ></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a ></li>
+                <li><a href="../chaoshan/index.html">🦞 潮汕风味</a ></li>
+                <li><a href="../kejia/index.html">🍛 客家菜韵</a ></li>
+                <li><a href="index.html">🥣 粤式靓汤</a ></li>
+                <li><a href="../dimsum/index.html">🍵 粤式茶点</a ></li>
+                <li><a href="../dessert/index.html">🍧 岭南甜品</a ></li>
+                <li><a href="../link/contact.html">📞 联系我们</a ></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h2>粤式靓汤介绍</h2>
+                <p>粤式靓汤是岭南饮食文化的灵魂，讲究“时令养生、慢火细熬”，以新鲜食材搭配草本药材，既滋养身体又温润味蕾。汤品注重食材配伍与火候把控，既能作为餐前开胃汤，也是日常滋补的佳品，承载着广东人“药食同源”的养生智慧。</p >
+                <div class="img-box">
+                    <img src="../images/soup_collection.jpg" alt="粤式靓汤合集">
+                    <p>../images/soup_collection.jpg</p >
+                </div>
+                <p>点击下方链接，解锁粤式靓汤的养生密码，学习经典汤品的家常做法：</p >
+                <ul style="margin: 10px 0 20px 20px; line-height: 1.8;">
+                    <li><a href="dishes.html">👉 经典汤品推荐</a >：冬瓜薏米老鸭汤、沙参玉竹炖鸡汤等招牌靓汤</li>
+                    <li><a href="topic.html">👉 养生专题</a >：节气汤品、特定人群专属汤品攻略</li>
+                    <li><a href="skills.html">👉 煲汤技巧</a >：食材处理、火候把控、药材搭配禁忌</li>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <h3>🥣 靓汤栏目导航</h3>
+                <ul>
+                    <li><a href="index.html">靓汤首页</a ></li>
+                    <li><a href="dishes.html">经典汤品</a ></li>
+                    <li><a href="topic.html">养生专题</a ></li>
+                    <li><a href="skills.html">煲汤技巧</a ></li>
+                </ul>
+                <h3 style="margin-top: 20px;">📖 美食小知识</h3>
+                <p style="line-height: 1.8; color: #666;">粤式靓汤讲究“春祛湿、夏清热、秋润燥、冬滋补”，不同季节搭配不同食材：春季用土茯苓、赤小豆祛湿，夏季用冬瓜、海带清热，秋季用沙参、玉竹润燥，冬季用鹿茸、红枣滋补。</p >
+            </div>
+        </div>
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        if(window.location.href.includes('login.html')) return;
+        if(localStorage.getItem('isLogin') !== 'yes') {
+            alert('请先登录才能访问！');
+            window.location.href = '../link/login.html';
+        }
+    }
+    function logout() {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        alert('已退出登录');
+        window.location.href = '../link/login.html';
+    }
+</script>
+</body>
+</html>

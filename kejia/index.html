@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>客家菜韵 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="kejia-page">
+    <div class="container">
+        <div class="header">
+          <a href="../index.html">
+        <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+    </a >
+            <h1>广东美食文化网 - 客家菜韵</h1>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a></li>
+                <li><a href="../chaoshan/index.html">🦞 潮汕风味</a></li>
+                <li><a href="index.html">🍛 客家菜韵</a></li>
+                <li><a href="../soup/index.html">🥣 粤式靓汤</a></li>
+                <li><a href="../dimsum/index.html">🍵 粤式茶点</a></li>
+                <li><a href="../dessert/index.html">🍧 岭南甜品</a></li>
+                <li><a href="../link/contact.html">📞 联系我们</a></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <h2>客家菜韵介绍</h2>
+                <p>客家菜是广东三大菜系之一，源于中原移民文化，结合岭南山区的食材特点，形成了“咸香浓郁、原汁原味、用料扎实”的独特风格。客家菜注重食材本味，烹饪手法以焖、炖、蒸、炒为主，擅长利用山间食材和家禽家畜，菜品分量足、味道醇厚，充满烟火气和家的味道。</p >
+                <div class="img-box">
+                    <img src="../images/kejia_collection.jpg" alt="客家合集">
+                    <p>../images/kejia_collection.jpg</p >
+                </div>
+
+                <p>点击下方链接，走进客家菜的世界，了解经典菜式背后的民俗故事，感受客家饮食文化的深厚底蕴：</p >
+                <ul style="margin: 10px 0 20px 20px; line-height: 1.8;">
+                    <li><a href="classic.html">👉 客家经典菜式</a >：盐焗鸡、梅菜扣肉、客家酿豆腐等招牌菜</li>
+                    <li><a href="folk.html">👉 客家饮食民俗</a >：客家宴席礼仪、食材传承、节日美食</li>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <h3>🍛 客家菜栏目导航</h3>
+                <ul>
+                    <li><a href="index.html">客家菜首页</a ></li>
+                    <li><a href="classic.html">经典菜式</a ></li>
+                    <li><a href="folk.html">民俗关联</a ></li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">📖 美食小知识</h3>
+                <p style="line-height: 1.8; color: #666;">客家菜讲究“咸香”，一方面是因为客家多居住在山区，咸食能补充体力；另一方面是过去保鲜条件有限，咸味能延长食材保质期。</p >
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+     <script>
+    window.onload = function() {
+        if(window.location.href.includes('login.html')) return;
+        if(localStorage.getItem('isLogin') !== 'yes') {
+            alert('请先登录才能访问！');
+            window.location.href = '../link/login.html';
+        }
+    }
+    function logout() {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        alert('已退出登录');
+        window.location.href = '../link/login.html';
+    }
+</script>
+</body>
+</html>

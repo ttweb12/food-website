@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册 - 广东美食文化网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fdf6e9;
+            font-family: "Microsoft YaHei", sans-serif;
+            padding: 20px;
+        }
+        /* 顶部导航 */
+        .page-nav {
+            text-align: center;
+            margin: 20px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .page-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .page-nav a:hover {
+            color: #c8102e;
+        }
+        .page-nav a.active {
+            color: #c8102e;
+            font-weight: bold;
+        }
+        /* 登录注册容器 */
+        .login-wrap {
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        /* 标题 */
+        .login-title {
+            text-align: center;
+            color: #c8102e;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        /* 标签切换 */
+        .tab-group {
+            display: flex;
+            border-bottom: 2px solid #eeeeee;
+            margin-bottom: 25px;
+        }
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666666;
+            transition: all 0.3s;
+        }
+        .tab-item.active {
+            color: #c8102e;
+            border-bottom: 2px solid #c8102e;
+        }
+        /* 表单容器 */
+        .form-wrap {
+            display: none;
+        }
+        .form-wrap.active {
+            display: block;
+        }
+        /* 表单组 */
+        .form-item {
+            margin-bottom: 20px;
+        }
+        .form-item label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333333;
+            font-size: 14px;
+        }
+        .form-item input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-item input:focus {
+            outline: none;
+            border-color: #c8102e;
+            box-shadow: 0 0 5px rgba(200, 16, 46, 0.2);
+        }
+        /* 记住密码样式 - 核心修复对齐问题 */
+        .remember-pwd {
+            display: flex;
+            align-items: center; /* 垂直居中对齐 */
+            margin: 10px 0 20px; /* 上下间距 */
+        }
+        .remember-pwd input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px; /* 复选框与文字间距 */
+            flex-shrink: 0; /* 防止复选框被压缩 */
+        }
+        .remember-pwd label {
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        /* 按钮 */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #c8102e;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #a80e26;
+        }
+        /* 提示文字 */
+        .tip-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #999999;
+        }
+        .tip-text span {
+            color: #c8102e;
+            cursor: pointer;
+        }
+        /* 错误提示 */
+        .error-tip {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="page-nav">
+        <a href=" ">首页</a >
+        <a href="#" class="active">登录注册</a >
+        <a href="../link/contact.html">联系我们</a >
+    </div>
+    <!-- 登录注册主体 -->
+    <div class="login-wrap">
+        <h2 class="login-title">登录/注册</h2>
+        
+        <!-- 标签切换 -->
+        <div class="tab-group">
+            <div class="tab-item active" data-tab="login">登录</div>
+            <div class="tab-item" data-tab="register">注册</div>
+        </div>
+        <!-- 登录表单 -->
+        <div class="form-wrap active" id="login">
+            <div class="form-item">
+                <label for="login-username">用户名</label>
+                <input type="text" id="login-username" placeholder="请输入用户名">
+                <div class="error-tip" id="login-user-error">用户名不能为空</div>
+            </div>
+            <div class="form-item">
+                <label for="login-password">密码</label>
+                <input type="password" id="login-password" placeholder="请输入密码">
+                <div class="error-tip" id="login-pwd-error">密码不能为空</div>
+            </div>
+            <!-- 记住密码模块 - 修复后的结构 -->
+            <div class="remember-pwd">
+                <input type="checkbox" id="remember-pwd">
+                <label for="remember-pwd">记住密码（7天）</label>
+            </div>
+            <button class="submit-btn" id="login-btn">立即登录</button>
+            <p class="tip-text">没账号？<span onclick="switchTab('register')">点击注册</span></p >
+        </div>
+        <!-- 注册表单 -->
+        <div class="form-wrap" id="register">
+            <div class="form-item">
+                <label for="reg-username">用户名（3-10位）</label>
+                <input type="text" id="reg-username" placeholder="设置用户名">
+                <div class="error-tip" id="reg-user-error">用户名长度需3-10位</div>
+            </div>
+            <div class="form-item">
+                <label for="reg-password">密码（6-16位）</label>
+                <input type="password" id="reg-password" placeholder="设置密码">
+                <div class="error-tip" id="reg-pwd-error">密码长度需6-16位</div>
+            </div>
+            <div class="form-item">
+                <label for="reg-repassword">确认密码</label>
+                <input type="password" id="reg-repassword" placeholder="再次输入密码">
+                <div class="error-tip" id="reg-repwd-error">两次密码不一致</div>
+            </div>
+            <button class="submit-btn" id="reg-btn">立即注册</button>
+            <p class="tip-text">有账号？<span onclick="switchTab('login')">点击登录</span></p >
+        </div>
+    </div>
+    <script>
+        // 切换登录/注册标签
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-item,.form-wrap').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        // 显示错误提示
+        function showError(errorId) {
+            const errorEl = document.getElementById(errorId);
+            errorEl.style.display = 'block';
+            setTimeout(() => {
+                errorEl.style.display = 'none';
+            }, 2000);
+        }
+        // 注册逻辑
+        document.getElementById('reg-btn').onclick = function() {
+            const username = document.getElementById('reg-username').value.trim();
+            const pwd = document.getElementById('reg-password').value.trim();
+            const repwd = document.getElementById('reg-repassword').value.trim();
+            if (username.length < 3 || username.length > 10) {
+                return showError('reg-user-error');
+            }
+            if (pwd.length < 6 || pwd.length > 16) {
+                return showError('reg-pwd-error');
+            }
+            if (pwd !== repwd) {
+                return showError('reg-repwd-error');
+            }
+            alert('注册成功！请登录');
+            switchTab('login');
+        };
+        // 登录逻辑（含记住密码）
+        document.getElementById('login-btn').onclick = function() {
+            const username = document.getElementById('login-username').value.trim();
+            const pwd = document.getElementById('login-password').value.trim();
+            const remember = document.getElementById('remember-pwd').checked;
+            
+            if (!username) {
+                return showError('login-user-error');
+            }
+            if (!pwd) {
+                return showError('login-pwd-error');
+            }
+            
+            localStorage.setItem('isLogin', 'yes');
+            localStorage.setItem('currentUser', username);
+            
+            if (remember) {
+                const expireTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
+                localStorage.setItem('expireTime', expireTime);
+                localStorage.setItem('savedPwd', pwd);
+            } else {
+                localStorage.removeItem('expireTime');
+                localStorage.removeItem('savedPwd');
+            }
+            
+            alert(`欢迎${username}！即将进入网站`);
+            window.location.href = '../index.html';
+
+        };
+        // 页面加载时自动填充密码 + 已登录跳转
+        window.onload = function() {
+            const isLogin = localStorage.getItem('isLogin') === 'yes';
+            const expireTime = localStorage.getItem('expireTime');
+            const currentTime = new Date().getTime();
+            
+            if (isLogin) {
+                alert('你已登录，无需重复登录');
+                window.location.href = '../index.html';
+                return;
+            }
+            
+            if (expireTime && currentTime < expireTime) {
+                const savedUser = localStorage.getItem('currentUser');
+                const savedPwd = localStorage.getItem('savedPwd');
+                if (savedUser && savedPwd) {
+                    document.getElementById('login-username').value = savedUser;
+                    document.getElementById('login-password').value = savedPwd;
+                    document.getElementById('remember-pwd').checked = true;
+                }
+            }
+        };
+    </script>
+</body>
+</html>

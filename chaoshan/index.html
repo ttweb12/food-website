@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>潮汕风味 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- 潮汕栏目专属背景色 -->
+<body class="chaoshan-page">
+    <div class="container">
+        <div class="header">
+  <a href="../index.html">
+        <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+    </a >
+            <h1>广东美食文化网 - 潮汕风味</h1>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a ></li>
+                <li><a href="index.html">🦞 潮汕风味</a></li>
+                <li><a href="../kejia/index.html">🍛 客家菜韵</a></li>
+                <li><a href="../soup/index.html">🥣 粤式靓汤</a></li>
+                <li><a href="../dimsum/index.html">🍵 粤式茶点</a></li>
+                <li><a href="../dessert/index.html">🍧 岭南甜品</a></li>
+                <li><a href="../link/contact.html">📞 联系我们</a></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <h2>潮汕风味介绍</h2>
+                <p>潮汕菜是粤菜的重要分支，发源于潮汕地区（潮州、汕头、揭阳），以“鲜、甜、清、淡”为核心特色，海鲜料理尤为出众。潮汕菜注重食材本味，烹饪手法精细，擅长白灼、清蒸、小炒、卤制，同时拥有丰富的小吃和功夫茶文化，形成了独具特色的饮食体系。</p >
+                
+                <!-- 图片插入位置1：潮汕美食合集图 -->
+                <div class="img-box">
+                    <img src="../images/chaoshan_collection.jpg" alt="潮汕美食合集">
+                    <p>../images/chaoshan_collection.jpg</p >
+                </div>
+
+                <p>点击下方链接，探索潮汕菜的特色菜品和独特饮食文化，感受“食在广州，味在潮汕”的真谛：</p >
+                <ul style="margin: 10px 0 20px 20px; line-height: 1.8;">
+                    <li><a href="special.html">👉 潮汕特色菜品</a >：卤鹅、牛肉火锅、砂锅粥等经典料理</li>
+                    <li><a href="culture.html">👉 潮汕饮食文化</a >：功夫茶、潮汕宴席、小吃文化详解</li>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <h3>🦞 潮汕栏目导航</h3>
+                <ul>
+                    <li><a href="index.html">潮汕首页</a ></li>
+                    <li><a href="special.html">特色菜品</a ></li>
+                    <li><a href="culture.html">饮食文化</a ></li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">📖 美食小知识</h3>
+                <p style="line-height: 1.8; color: #666;">潮汕菜对海鲜的新鲜度要求极高，“生猛海鲜”是潮汕菜的代名词，很多菜品需现捞现做，才能保证最佳口感。</p >
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        if(window.location.href.includes('login.html')) return;
+        if(localStorage.getItem('isLogin') !== 'yes') {
+            alert('请先登录才能访问！');
+            window.location.href = '../link/login.html';
+        }
+    }
+    function logout() {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        alert('已退出登录');
+        window.location.href = '../link/login.html';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* 表单样式，适配网站风格 */
+        .feedback-form {
+            width: 100%;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f5f0;
+            border-radius: 6px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+        .submit-btn {
+            padding: 8px 20px;
+            background: #c8102e;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #a00c22;
+        }
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="index-page">
+    <div class="container">
+        <div class="header">
+            <a href=" ">
+                <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+            </a >
+            <h1>广东美食文化网 - 联系我们</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a ></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a ></li>
+                <li><a href="../chaoshan/index.html">🦞 潮汕风味</a ></li>
+                <li><a href="../kejia/index.html">🍛 客家菜韵</a ></li>
+                <li><a href="../soup/index.html">🥣 粤式靓汤</a ></li>
+                <li><a href="../dimsum/index.html">🍵 粤式茶点</a ></li>
+                <li><a href="../dessert/index.html">🍧 岭南甜品</a ></li>
+                <li><a href="friend.html">🔗 友情链接</a ></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h2>网站运营团队联系方式</h2>
+                <!-- 图片插入位置：联系我们板块配图 -->
+                <div class="img-box">
+                    <img src="../images/link_contact.jpg" alt="广东美食文化网运营团队联系方式">
+                </div>
+                <div style="line-height:2; margin-top:20px; font-size:16px;">
+                    <p>📧 电子邮箱：<strong>2833993296@qq.com</strong></p >
+                    <p>🏫 办公地址：<strong>广东建议职业技术学院建筑信息学院</strong></p >
+                    <p>📝 留言反馈：<strong>如需建议或合作可发送邮件至上述电子邮箱，我们会在24小时内回复</strong></p >
+                </div>
+
+                <!-- 在线留言反馈表单（支持邮件通知） -->
+                <div class="feedback-form">
+                    <h3 style="color: #c8102e; margin-bottom: 15px;">在线留言反馈</h3>
+                    <!-- 替换action中的邮箱为你的（保持formspree.io/f/xxx格式） -->
+                    <form id="feedbackForm" action="https://formspree.io/f/2833993296@qq.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">您的昵称</label>
+                            <input type="text" id="name" name="name" placeholder="请输入昵称" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">联系邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">反馈内容</label>
+                            <textarea id="message" name="message" placeholder="请写下您的建议或合作想法~" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">提交反馈</button>
+                    </form>
+                </div>
+            </div>
+            <div class="sidebar">
+                <h3>📌 栏目快速入口</h3>
+                <ul>
+                    <li><a href="../yuecai/dishes.html">粤菜代表菜品</a ></li>
+                    <li><a href="../chaoshan/special.html">潮汕特色菜品</a ></li>
+                    <li><a href="../kejia/classic.html">客家经典菜式</a ></li>
+                </ul>
+                <h3 style="margin-top:20px;">🏠 返回首页</h3>
+                <ul>
+                    <li><a href="../index.html">网站总首页</a ></li>
+                </ul>
+                <div style="margin-top: 20px;">
+                    <div style="width: 100%; background: #f9f6ed; padding: 15px; border-radius: 6px;">
+                        <h3 style="color: #c8102e; font-size: 16px; margin-bottom: 15px; text-align: center;">🍜 岭南美食小问答</h3>
+                        <!-- 问题1 -->
+                        <div style="margin-bottom: 15px;">
+                            <p style="font-size: 14px; margin-bottom: 8px;"><b>Q1：潮汕牛肉丸的制作特点是？</b></p >
+                            <button onclick="checkAns('b1', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">A. 机器搅拌</button>
+                            <button onclick="checkAns('a1', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">B. 手工捶打</button>
+                            <button onclick="checkAns('c1', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">C. 蒸制成型</button>
+                        </div>
+                        <!-- 问题2 -->
+                        <div>
+                            <p style="font-size: 14px; margin-bottom: 8px;"><b>Q2：广式早茶“四大天王”之首是？</b></p >
+                            <button onclick="checkAns('a2', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">A. 虾饺皇</button>
+                            <button onclick="checkAns('b2', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">B. 叉烧包</button>
+                            <button onclick="checkAns('c2', this)" style="width: 100%; padding: 6px; margin: 3px 0; border: none; border-radius: 3px; cursor: pointer; background: #fff; border:1px solid #ddd;">C. 蛋挞</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+    <script>
+        // 表单提交逻辑（支持邮件通知）
+        const form = document.getElementById('feedbackForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // 阻止默认提交
+            submitBtn.disabled = true;
+            submitBtn.textContent = '提交中...';
+            
+            // 发送表单数据到邮箱
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert('反馈提交成功！我们会在24小时内回复您~');
+                    form.reset(); // 重置表单
+                } else {
+                    alert('提交失败，请稍后再试！');
+                }
+            }).catch(error => {
+                alert('网络错误，请检查网络连接后重试！');
+                console.error('提交错误：', error);
+            }).finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '提交反馈';
+            });
+        });
+
+        // 美食小问答验证逻辑
+        function checkAns(ans, btn) {
+            // 禁用当前问题的所有按钮
+            let parentBtns = btn.parentElement.querySelectorAll("button");
+            parentBtns.forEach(b => b.disabled = true);
+            if (ans === "a1" || ans === "a2") {
+                btn.style.background = "#4CAF50";
+                btn.style.color = "#fff";
+                alert("答对啦！不愧是岭南美食爱好者~");
+            } else {
+                btn.style.background = "#f44336";
+                btn.style.color = "#fff";
+                let correct = ans === "b1" ? "B. 手工捶打" : "A. 虾饺皇";
+                alert(`答错啦，正确答案是${correct}哦！`);
+            }
+        }
+
+        // 登录状态验证（统一逻辑）
+        window.onload = function() {
+            const loginPage = window.location.href.includes('login.html');
+            const isLogin = localStorage.getItem('isLogin') === 'yes';
+            if (!loginPage && !isLogin) {
+                setTimeout(() => {
+                    alert('请先登录才能访问美食内容～');
+                    window.location.href = '../link/login.html';
+                }, 500);
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>粤式茶点 - 广东美食文化网</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- 粤式茶点专属背景色 -->
+<body class="dimsum-page">
+    <div class="container">
+        <div class="header">
+           <a href="../index.html">
+        <img src="../images/logo.png" alt="粤味轩-广东美食文化网" class="header-logo">
+    </a >
+            <h1>广东美食文化网 - 粤式茶点</h1>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html">🏠 首页</a></li>
+                <li><a href="../yuecai/index.html">🍲 粤菜经典</a></li>
+                <li><a href="../chaoshan/index.html">🦞 潮汕风味</a></li>
+                <li><a href="../kejia/index.html">🍛 客家菜韵</a></li>
+                <li><a href="../soup/index.html">🥣 粤式靓汤</a></li>
+                <li><a href="index.html">🍵 粤式茶点</a></li>
+                <li><a href="../dessert/index.html">🍧 岭南甜品</a></li>
+                <li><a href="../link/contact.html">📞 联系我们</a></li>
+                <li><a href="../link/login.html" style="color: #c8102e; font-weight: bold;">🚪 退出登录</a ></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <h2>粤式茶点介绍</h2>
+                <p>粤式茶点又称广式早茶，是岭南饮食文化的重要符号，讲究“一盅两件”（一壶茶搭配两款点心）。茶点种类繁多，造型精致，口味涵盖甜、咸、鲜，不仅是广东人的早餐和下午茶选择，更是一种休闲社交的生活方式，体现了“慢生活”的岭南韵味。</p >
+                
+                <!-- 图片插入位置1：粤式茶点合集图 -->
+                <div class="img-box">
+                    <img src="../images/dimsum_collection.jpg" alt="粤式茶点合集">
+                    <p>../images/dimsum_collection.jpg</p >
+                </div>
+
+                <p>点击下方链接，探索粤式早茶的丰富品类，了解茶点背后的文化故事：</p >
+                <ul style="margin: 10px 0 20px 20px; line-height: 1.8;">
+                    <li><a href="category.html">👉 早茶品类推荐</a >：虾饺、烧卖、叉烧包等经典茶点</li>
+                    <li><a href="teaculture.html">👉 茶点文化解析</a >：早茶礼仪、茶与点心的搭配技巧</li>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <h3>🍵 茶点栏目导航</h3>
+                <ul>
+                    <li><a href="index.html">茶点首页</a ></li>
+                    <li><a href="category.html">早茶品类</a ></li>
+                    <li><a href="teaculture.html">茶点文化</a ></li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">📖 美食小知识</h3>
+                <p style="line-height: 1.8; color: #666;">粤式早茶的“茶”以普洱、铁观音、红茶为主，普洱能解腻，铁观音清香，搭配点心各有风味。</p >
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>作者：姚婷婷 | 电子邮箱：2833993296@qq.com | 地址：广东建议职业技术学院建筑信息学院 | 版权所有 © 2025 广东美食文化网</p >
+        </div>
+    </div>
+ <script>
+    window.onload = function() {
+        if(window.location.href.includes('login.html')) return;
+        if(localStorage.getItem('isLogin') !== 'yes') {
+            alert('请先登录才能访问！');
+            window.location.href = '../link/login.html';
+        }
+    }
+    function logout() {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        alert('已退出登录');
+        window.location.href = '../link/login.html';
+    }
+</script>
+</body>
+</html>
